@@ -1,0 +1,39 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+  application:
+    message: Hello Phil
+    name: ms-jiguojun
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+
+server:
+  port: 8082
+
+
+datasource:
+  initialSize: 10
+  minIdle: 10
+  maxActive: 20
+  maxWait: 60000
+  timeBetweenEvictionRunsMillis: 60000
+  minEvictableIdleTimeMillis: 300000
+  validationQuery: SELECT 1
+  testWhileIdle: true
+  testOnBorrow: false
+  testOnReturn: false
+  poolPreparedStatements: false
+  maxPoolPreparedStatementPerConnectionSize: 20
+  filters: stat
+  url: jdbc:mysql://localhost:3306/ypp_app_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+  userName: root
+  password: 123456
+
+mybatis:
+  type-aliases-package: com.bao.model
+  mapper-locations: classpath*:mapper/*Mapper.xml
